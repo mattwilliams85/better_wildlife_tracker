@@ -12,11 +12,22 @@
 
   <div >
     <h3>Recent Sightings:</h3>
-    <div style='width: 800px;'>
-      <div id="map" style='width: 800px; height: 400px;'></div>
+    <ul>
+      <%if @sightings == nil %>
+        <p> No sightings at this time... </p>
+      <% else %>
+        <% @sightings.each do |sighting| %>
+          <li> <%= sighting.created_at.strftime("%m/%d/%Y") %>
+               <%= Animal.find(sighting.animal_id).name %> seen at
+               <%= Region.find(sighting.region_id).name%> @
+               <%= sighting.latitude %>,
+               <%= sighting.longitude %>
+          </li>
+        <% end %>
+      <% end %>
     </div>
 
-  </div>
+  </ul>
 
 
 </div>
