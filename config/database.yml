@@ -1,0 +1,7 @@
+development:
+  database: wilderlife_development
+  adapter:  postgresql
+
+test:
+  database: wilderlife_test
+  adapter:  postgresql
