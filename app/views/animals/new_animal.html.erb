@@ -1,0 +1,18 @@
+  <h4> New Animal Entry: </h4>
+  <form action="/animals" method="post">
+    <label for="animal_name"> Name </label>
+    <input id="animal_name" name="name" text="text">
+    <button>Add!</button>
+  </form>
+
+  <% if @animal.errors.any? %>
+    <% @animal.errors.full_messages.each do |message| %>
+      <h3 style="color:red"> <%= message %></h3>
+    <% end %>
+  <% end %>
+  <% if @animal.persisted? %>
+    <h3 style="color:green"> Success! </h3>
+  <% end %>
+
+</div>
+

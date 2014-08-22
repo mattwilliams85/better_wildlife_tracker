@@ -1,0 +1,17 @@
+  <h4> New Region Entry: </h4>
+  <form action="/regions" method="post">
+    <label for="region_name"> Name </label>
+    <input id="region_name" name="name" text="text">
+    <button>Add!</button>
+  </form>
+
+
+  <% if @region.errors.any? %>
+    <% @region.errors.full_messages.each do |message| %>
+      <h3 style="color:red"> <%= message %></h3>
+    <% end %>
+  <% end %>
+  <% if @region.persisted? %>
+    <h3 style="color:green"> Success! </h3>
+  <% end %>
+</div>

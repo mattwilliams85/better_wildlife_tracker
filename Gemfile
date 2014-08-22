@@ -7,17 +7,18 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'gmaps4rails'
 
 group :development do
-gem 'better_errors'
-gem 'binding_of_caller'
-gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 group :test, :development do
-gem 'rspec-rails'
+  gem 'rspec-rails'
 end
 
 group :test do
-gem 'shoulda-matchers'
+  gem 'shoulda-matchers'
 end

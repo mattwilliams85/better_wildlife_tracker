@@ -46,6 +46,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
+    gmaps4rails (2.1.2)
     hike (1.2.3)
     i18n (0.6.11)
     jquery-rails (3.1.1)
@@ -135,6 +136,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails
+  gmaps4rails
   jquery-rails
   pg
   quiet_assets

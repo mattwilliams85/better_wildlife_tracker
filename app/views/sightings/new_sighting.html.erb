@@ -1,0 +1,36 @@
+  <h4> New Sightings Entry: </h4>
+
+  <form id="sightings" role="form" action="/sightings" method="post">
+
+     <div style="padding-bottom:20px">
+      Animal: <select form="sightings" name="animal[id]" style="width:100px;margin-right:20px">
+        <% @animals.each do |animal| %>
+          <option value ="<%=animal.id %>"> <%= animal.name %> </option>
+        <% end %>
+      </select>
+
+      Region: <select name="region[id]" style="width:100px">
+        <% @regions.each do |region| %>
+          <option value ="<%=region.id %>"> <%= region.name %> </option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="latitude"> Latitude </label>
+      <input id="latitude" name="latitude" text="text" placeholder="-180 to 180" style="width:100px;margin-right:15px">
+      <label for="longitude"> Longitude </label>
+      <input id="longitude" name="longitude" text="text" placeholder="-90 to 90" style="width:100px">
+    </div>
+    <button>Add!</button>
+  </form>
+
+  <% if @sighting.errors.any? %>
+    <% @sighting.errors.full_messages.each do |message| %>
+      <h3 style="color:red"> <%= message %></h3>
+    <% end %>
+  <% end %>
+  <% if @sighting.persisted? %>
+    <h3 style="color:green"> Success! </h3>
+  <% end %>
+</div>
